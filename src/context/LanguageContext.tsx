@@ -124,7 +124,43 @@ type TranslationKeys = {
     invalidCredentials: string;
     emailExists: string;
     unexpectedError: string;
-  }
+  };
+  aiDetector: {
+    title: string;
+    subtitle: string;
+    inputTitle: string;
+    inputDescription: string;
+    placeholder: string;
+    charactersCount: string;
+    detecting: string;
+    startDetection: string;
+    pleaseInputText: string;
+    pleaseInputTextDesc: string;
+    inputTooShort: string;
+    inputTooShortDesc: string;
+    detectionComplete: string;
+    detectionCompleteDesc: string;
+    detectionFailed: string;
+    detectionFailedDesc: string;
+    results: string;
+    aiProbability: string;
+    confidenceLevel: string;
+    forensicEvidence: string;
+    primaryIndicators: string;
+    currentValue: string;
+    baseline: string;
+    modelSignature: string;
+    topCandidate: string;
+    alternativeCandidate: string;
+    segmentAnalysis: string;
+    segmentAnalysisDesc: string;
+    position: string;
+    anomalyScore: string;
+    robustnessReport: string;
+    adversarialScore: string;
+    detectedManipulations: string;
+    noManipulations: string;
+  };
 };
 
 const translations: Record<Language, TranslationKeys> = {
@@ -251,6 +287,42 @@ const translations: Record<Language, TranslationKeys> = {
       emailExists: "An account with this email already exists",
       unexpectedError: "An unexpected error occurred",
     },
+    aiDetector: {
+      title: "AI Content Detector",
+      subtitle: "Advanced AI detection technology to analyze text authenticity",
+      inputTitle: "Text Input",
+      inputDescription: "Paste your text below for AI detection analysis. Minimum 50 characters required.",
+      placeholder: "Paste the text you want to analyze here...",
+      charactersCount: "characters",
+      detecting: "Detecting...",
+      startDetection: "Start Detection",
+      pleaseInputText: "Please enter text",
+      pleaseInputTextDesc: "Text input is required for detection",
+      inputTooShort: "Text too short",
+      inputTooShortDesc: "Please enter at least 50 characters for accurate detection",
+      detectionComplete: "Detection Complete",
+      detectionCompleteDesc: "AI detection analysis has been completed",
+      detectionFailed: "Detection Failed",
+      detectionFailedDesc: "Unable to complete AI detection, please try again",
+      results: "Detection Results",
+      aiProbability: "AI Probability",
+      confidenceLevel: "Confidence Level",
+      forensicEvidence: "Forensic Evidence",
+      primaryIndicators: "Primary Indicators",
+      currentValue: "Current",
+      baseline: "Baseline",
+      modelSignature: "Model Signature",
+      topCandidate: "Top Candidate",
+      alternativeCandidate: "Alternative",
+      segmentAnalysis: "Segment Analysis",
+      segmentAnalysisDesc: "Detailed analysis of text segments with anomaly detection",
+      position: "Position",
+      anomalyScore: "Anomaly Score",
+      robustnessReport: "Robustness Report",
+      adversarialScore: "Adversarial Score",
+      detectedManipulations: "Detected Manipulations",
+      noManipulations: "No manipulations detected",
+    },
   },
   zh: {
     navbar: {
@@ -374,6 +446,42 @@ const translations: Record<Language, TranslationKeys> = {
       invalidCredentials: "邮箱或密码无效",
       emailExists: "该邮箱已被注册",
       unexpectedError: "发生了未知错误",
+    },
+    aiDetector: {
+      title: "AI内容检测器",
+      subtitle: "先进的AI检测技术，分析文本真实性",
+      inputTitle: "文本输入",
+      inputDescription: "在下方粘贴您的文本进行AI检测分析，最少需要50个字符。",
+      placeholder: "请在此处粘贴您想要分析的文本...",
+      charactersCount: "个字符",
+      detecting: "检测中...",
+      startDetection: "开始检测",
+      pleaseInputText: "请输入文本",
+      pleaseInputTextDesc: "检测需要输入文本内容",
+      inputTooShort: "文本过短",
+      inputTooShortDesc: "请输入至少50个字符以进行准确检测",
+      detectionComplete: "检测完成",
+      detectionCompleteDesc: "AI检测分析已完成",
+      detectionFailed: "检测失败",
+      detectionFailedDesc: "无法完成AI检测，请重试",
+      results: "检测结果",
+      aiProbability: "AI概率",
+      confidenceLevel: "置信度",
+      forensicEvidence: "法证证据",
+      primaryIndicators: "主要指标",
+      currentValue: "当前值",
+      baseline: "基准值",
+      modelSignature: "模型特征",
+      topCandidate: "首要候选",
+      alternativeCandidate: "备选候选",
+      segmentAnalysis: "分段分析",
+      segmentAnalysisDesc: "对文本片段进行详细分析，包含异常检测",
+      position: "位置",
+      anomalyScore: "异常分数",
+      robustnessReport: "鲁棒性报告",
+      adversarialScore: "对抗分数",
+      detectedManipulations: "检测到的操控",
+      noManipulations: "未检测到操控",
     }
   },
 };
