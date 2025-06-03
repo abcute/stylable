@@ -21,7 +21,7 @@ import { saveStyleAnalysis } from "@/utils/supabaseUtils";
 
 const Index = () => {
   const { toast } = useToast();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { user, isAuthenticated } = useAuth();
   const [step, setStep] = useState(1);
   const [originalText, setOriginalText] = useState("");
@@ -202,7 +202,7 @@ const Index = () => {
       
       <main className="container mx-auto px-4 py-8 flex-1">
         <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-gradient">
-          Styleable
+          {language === "zh" ? "AI文章仿写" : "AI Article Rewriting"}
         </h1>
         
         <StepIndicator 
