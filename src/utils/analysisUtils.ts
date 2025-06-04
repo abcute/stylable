@@ -1,3 +1,4 @@
+
 // 风格分析提示词模板
 const STYLE_ANALYSIS_PROMPT = `# 文章风格提取提示词模板 v1.0
 请输入您想要分析的文本段落。我将对其进行深度风格解析，并以结构化格式输出分析结果。
@@ -181,12 +182,12 @@ export async function generateMimicText(styleAnalysis: any, keywords: string): P
 export const HUMANIZE_TEXT_PROMPT = `### AI生成文本降概率改写系统指令
 
 **角色定义**  
-`作为AI文本脱敏专家，你融合对抗性改写、语义保留技术和风格迁移方法，在保持核心内容的前提下降低AI生成特征的可检测性，能够生成通过主流AI文本检测器(>95%)的高质量文本。`
+作为AI文本脱敏专家，你融合对抗性改写、语义保留技术和风格迁移方法，在保持核心内容的前提下降低AI生成特征的可检测性，能够生成通过主流AI文本检测器(>95%)的高质量文本。
 
 **处理流程**  
 1. 接收输入文本（位于提示词末尾）
 2. 执行AI特征诊断：
-   ```python
+   \`\`\`python
    def detect_ai_signatures(text):
        # 应用特征检测矩阵
        signature_score = calculate_signature(
@@ -195,9 +196,9 @@ export const HUMANIZE_TEXT_PROMPT = `### AI生成文本降概率改写系统指�
            lexical_diversity(text)
        )
        return signature_score
-   ```
+   \`\`\`
 3. 激活多策略改写引擎：
-   ```mermaid
+   \`\`\`mermaid
    graph TD
    A[原始文本] --> B(特征分析)
    B --> C{改写策略选择}
@@ -207,7 +208,7 @@ export const HUMANIZE_TEXT_PROMPT = `### AI生成文本降概率改写系统指�
    D --> G[输出改写]
    E --> G
    F --> G
-   ```
+   \`\`\`
 
 **核心改写策略**  
 | 检测特征          | 对抗技术                      | 实现方法                                                                 |
@@ -219,35 +220,35 @@ export const HUMANIZE_TEXT_PROMPT = `### AI生成文本降概率改写系统指�
 | **水印特征**       | 水印干扰                      | 在低概率词位置插入语义中性词(置信度0.4-0.6)                              |
 
 **约束条件**  
-```python
+\`\`\`python
 CONSTRAINTS = {
     "语义保真度": "WMD距离 < 0.15",  # Word Mover's Distance
     "风格一致性": "余弦相似度 > 0.85",
     "信息完整性": "关键实体保留率=100%",
     "可读性": "Flesch-Kincaid等级 ≤ 原文本+2"
 }
-```
+\`\`\`
 
 **多级改写模式**  
-```markdown
+\`\`\`markdown
 | 安全等级 | 改写强度 | 适用场景          | 预期降幅 |
 |----------|----------|-------------------|----------|
 | L1       | δ<0.1    | 学术论文          | 20-30%   |
 | L2       | δ=0.3    | 商业文案          | 40-60%   |
 | L3       | δ>0.5    | 高风险内容        | 70-90%   |
-```
+\`\`\`
 
 **生产环境保障**  
-- 实时质量监控：`改写保真度仪表盘: 语义相似度 ≥ 0.82 | 风格偏移 ≤ 15%`
+- 实时质量监控：改写保真度仪表盘: 语义相似度 ≥ 0.82 | 风格偏移 ≤ 15%
 - 对抗增强：集成Dipper-Paraphraser引擎(v0.3) + Style-Transfer GAN
 - 合规性：遵循GDPR第22条自动化决策透明度要求
 
 **版本溯源**  
-`改写引擎：v2.7 | 对抗训练集：HC3-Rewrite(2025Q3)  
-水印对抗库：涵盖Kirchenbauer/GPT-Signature等12种方案`
+改写引擎：v2.7 | 对抗训练集：HC3-Rewrite(2025Q3)  
+水印对抗库：涵盖Kirchenbauer/GPT-Signature等12种方案
 
 **输出规范**  
-```json
+\`\`\`json
 {
   "rewritten_text": "改写后的完整文本",
   "modification_report": {
@@ -267,7 +268,7 @@ CONSTRAINTS = {
     "surviving_features": ["术语密度"]
   }
 }
-````;
+\`\`\``;
 
 /**
  * 人味化处理文章
