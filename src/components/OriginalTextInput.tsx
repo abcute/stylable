@@ -24,7 +24,7 @@ const OriginalTextInput = ({ value, onChange, onAnalyze, isLoading }: OriginalTe
           placeholder={t("originalText.placeholder")}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="min-h-[300px] mb-4"
+          className="min-h-[200px] resize-none mb-4"
         />
         
         <div className="flex justify-end">
