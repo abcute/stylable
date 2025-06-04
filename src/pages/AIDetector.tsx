@@ -112,7 +112,7 @@ const AIDetector = () => {
       <Navbar />
       
       <main className="container mx-auto px-4 py-8 flex-1">
-        <div className="max-w-4xl mx-auto">
+        <div className="w-full">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 text-transparent bg-clip-text">
               {t("aiDetector.title")}
