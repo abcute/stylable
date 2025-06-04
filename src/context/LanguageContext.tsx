@@ -477,12 +477,12 @@ const translations: Record<Language, TranslationKeys> = {
       segmentAnalysis: "分段分析",
       segmentAnalysisDesc: "对文本片段进行详细分析，包含异常检测",
       position: "位置",
-      anomalyScore: string;
-      robustnessReport: string;
-      adversarialScore: string;
-      detectedManipulations: string;
-      noManipulations: string;
-    }
+      anomalyScore: "异常分数",
+      robustnessReport: "鲁棒性报告",
+      adversarialScore: "对抗分数",
+      detectedManipulations: "检测到的操控",
+      noManipulations: "未检测到操控",
+    },
   },
 };
 
