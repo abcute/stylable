@@ -52,7 +52,6 @@ const Index = () => {
       setStyleAnalysis(analysisResult);
       setStep(2);
       
-      // Save style analysis to database if user is logged in
       if (isAuthenticated && user && analysisResult) {
         try {
           const styleName = `风格分析 - ${new Date().toLocaleDateString('zh-CN')}`;
@@ -94,7 +93,7 @@ const Index = () => {
   const handleStyleSelect = (styleData: any, styleName: string) => {
     setStyleAnalysis(styleData);
     setStep(2);
-    setOriginalText(""); // Clear original text since we're using saved style
+    setOriginalText("");
     toast({
       title: "风格已加载",
       description: `已加载风格：${styleName}`,
