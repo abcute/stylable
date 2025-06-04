@@ -290,7 +290,7 @@ const translations: Record<Language, TranslationKeys> = {
     aiDetector: {
       title: "AI Content Detector",
       subtitle: "Advanced AI detection technology to analyze text authenticity",
-      inputTitle: "Text Input",
+      inputTitle: "Please Enter Text to Detect",
       inputDescription: "Paste your text below for AI detection analysis. Minimum 50 characters required.",
       placeholder: "Paste the text you want to analyze here...",
       charactersCount: "characters",
@@ -450,7 +450,7 @@ const translations: Record<Language, TranslationKeys> = {
     aiDetector: {
       title: "AI内容检测器",
       subtitle: "先进的AI检测技术，分析文本真实性",
-      inputTitle: "文本输入",
+      inputTitle: "请输入待检测的文本",
       inputDescription: "在下方粘贴您的文本进行AI检测分析，最少需要50个字符。",
       placeholder: "请在此处粘贴您想要分析的文本...",
       charactersCount: "个字符",
@@ -477,11 +477,11 @@ const translations: Record<Language, TranslationKeys> = {
       segmentAnalysis: "分段分析",
       segmentAnalysisDesc: "对文本片段进行详细分析，包含异常检测",
       position: "位置",
-      anomalyScore: "异常分数",
-      robustnessReport: "鲁棒性报告",
-      adversarialScore: "对抗分数",
-      detectedManipulations: "检测到的操控",
-      noManipulations: "未检测到操控",
+      anomalyScore: string;
+      robustnessReport: string;
+      adversarialScore: string;
+      detectedManipulations: string;
+      noManipulations: string;
     }
   },
 };
