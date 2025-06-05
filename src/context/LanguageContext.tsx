@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 type Language = "en" | "zh";
@@ -77,6 +78,7 @@ type TranslationKeys = {
     paymentSuccess: string;
     copySuccess: string;
     copyFail: string;
+    copied: string;
   };
   footer: {
     copyright: string;
@@ -95,6 +97,11 @@ type TranslationKeys = {
     viewFull: string;
     noFavorites: string;
     noWorks: string;
+    workDetails: string;
+    copyText: string;
+    backToWorks: string;
+    addedToFavorites: string;
+    removedFromFavorites: string;
   };
   auth: {
     loginTitle: string;
@@ -239,6 +246,7 @@ const translations: Record<Language, TranslationKeys> = {
       paymentSuccess: "Payment Successful",
       copySuccess: "Text copied to clipboard",
       copyFail: "Failed to copy text, please try again",
+      copied: "Copied",
     },
     footer: {
       copyright: "©2025 Styleable.AI All Rights Reserved",
@@ -257,6 +265,11 @@ const translations: Record<Language, TranslationKeys> = {
       viewFull: "View Full",
       noFavorites: "No favorite works yet",
       noWorks: "You haven't created any works yet",
+      workDetails: "Work Details",
+      copyText: "Copy Text",
+      backToWorks: "Back to Works",
+      addedToFavorites: "Added to favorites",
+      removedFromFavorites: "Removed from favorites",
     },
     auth: {
       loginTitle: "Welcome Back",
@@ -399,6 +412,7 @@ const translations: Record<Language, TranslationKeys> = {
       paymentSuccess: "支付成功",
       copySuccess: "全文已复制到剪贴板",
       copyFail: "无法复制文本，请重试",
+      copied: "已复制",
     },
     footer: {
       copyright: "©2025 Styleable.AI 保留所有权利",
@@ -417,6 +431,11 @@ const translations: Record<Language, TranslationKeys> = {
       viewFull: "查看全文",
       noFavorites: "暂无收藏作品",
       noWorks: "您还没有创建任何作品",
+      workDetails: "作品详情",
+      copyText: "复制文本",
+      backToWorks: "返回作品列表",
+      addedToFavorites: "已添加到收藏",
+      removedFromFavorites: "已取消收藏",
     },
     auth: {
       loginTitle: "欢迎回来",
