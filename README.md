@@ -7,9 +7,10 @@ Styleable 是一个基于 AI 的智能写作工具，能够分析文本风格并
 
 - **智能风格分析**：深度解析文本的语言特征、结构特征、叙事特征等多维度风格要素
 - **精准风格模仿**：基于分析结果生成符合原文风格的新内容
-- **人性化改写**：将 AI 生成的内容进行人性化处理，增加真实感
-- **风格管理**：自动保存分析过的风格，支持重复使用
+- **人性化改写**：将 AI 生成的内容进行人性化处理，增加真实感和自然度
+- **风格管理**：自动保存分析过的风格，支持重复使用已保存的风格模板
 - **作品管理**：完整的作品创建、保存、收藏和管理功能
+- **AI 检测器**：内置 AI 内容检测功能，分析文本的 AI 生成概率
 - **多语言支持**：支持中英文界面切换
 - **用户认证**：完整的用户注册、登录和会话管理
 
@@ -40,182 +41,46 @@ Styleable 是一个基于 AI 的智能写作工具，能够分析文本风格并
 7. **文化底蕴**：典故运用、知识领域
 8. **韵律节奏**：音节特征、停顿规律
 
-#### 风格分析提示词模板
-```
-# 文章风格提取提示词模板 v1.0
-请输入您想要分析的文本段落。我将对其进行深度风格解析，并以结构化格式输出分析结果。
-
-## 分析维度
-我将从以下维度分析文本风格特征：
-1. 语言特征（句式、用词、修辞）
-2. 结构特征（段落、过渡、层次）
-3. 叙事特征（视角、距离、时序）
-4. 情感特征（浓淡、方式、基调）
-5. 思维特征（逻辑、深度、节奏）
-6. 个性标记（独特表达、意象系统）
-7. 文化底蕴（典故、知识领域）
-8. 韵律节奏（音节、停顿、节奏）
-
-## 输出格式
-我将以下列结构化格式以代码块输出分析结果：
-json
-{
-  "style_summary": "风格一句话概括",
-  "language": {
-    "sentence_pattern": ["主要句式特征", "次要句式特征"],
-    "word_choice": {
-      "formality_level": "正式度 1-5",
-      "preferred_words": ["高频特征词1", "特征词2"],
-      "avoided_words": ["规避词类1", "规避词类2"]
-    },
-    "rhetoric": ["主要修辞手法1", "修辞手法2"]
-  },
-  "structure": {
-    "paragraph_length": "段落平均字数",
-    "transition_style": "过渡特征",
-    "hierarchy_pattern": "层次展开方式"
-  },
-  "narrative": {
-    "perspective": "叙事视角",
-    "time_sequence": "时间处理方式",
-    "narrator_attitude": "叙事态度"
-  },
-  "emotion": {
-    "intensity": "情感强度 1-5",
-    "expression_style": "表达方式",
-    "tone": "情感基调"
-  },
-  "thinking": {
-    "logic_pattern": "思维推进方式",
-    "depth": "思维深度 1-5",
-    "rhythm": "思维节奏特征"
-  },
-  "uniqueness": {
-    "signature_phrases": ["标志性表达1", "表达2"],
-    "imagery_system": ["核心意象1", "意象2"]
-  },
-  "cultural": {
-    "allusions": ["典故类型", "使用频率"],
-    "knowledge_domains": ["涉及领域1", "领域2"]
-  },
-  "rhythm": {
-    "syllable_pattern": "音节特征",
-    "pause_pattern": "停顿规律",
-    "tempo": "节奏特征"
-  }
-}
-
-## 注意：
-1. 文中提及的特殊要素不要提取，例如书名、作者姓名、特定地理位置等。
-2. 风格提取的目的在于基于该风格生成其他指定主题的文章，提取要素应当基于这一任务。
-```
-
 ### 2. 风格仿写功能
 
-#### 文章仿写提示词模板
-```
-# 文章仿写提示词模板 v1.0
-基于上述文本风格，为我编写一篇1000字的文章，要求如下：
-关键词：{keywords}
-
-注意：
-- 禁止使用"让我想起…""这让我想起…""我不由得想起…"等回忆性过渡句
-- 避免刻意煽情或直白的情感表达
-- 采用自然段落输出，不使用标题和小标题
-```
+基于分析出的风格特征，根据用户提供的关键词生成符合原文风格的新文章。仿写过程严格遵循风格约束，避免使用回忆性过渡句和刻意煽情表达。
 
 ### 3. 人性化改写功能
 
-#### 人味改写提示词模板
-```
-# 人味改写提示词模板 v1.0
-基于下列方式改写文本，生成更有"人味"的文章：
+采用先进的 AI 文本降概率改写技术，通过以下策略增强文本的自然度：
 
-{
-  "真实人类思维文本范式": {
-    "核心原则": [
-      "思维碎片化：人类思维不是线性的，而是充满跳跃、联想和中断",
-      "身体感知优先：身体状态深刻影响思维内容和情绪",
-      "矛盾并存：内心冲突和矛盾是常态，不需要解决",
-      "琐事干扰：日常琐事和随机想法经常打断深刻思考",
-      "不完美表达：语言表达有重复、犹豫和不精确"
-    ],
-    "文本结构框架": {
-      "身体层面": {
-        "占比": "20-30%",
-        "要素": [
-          "插入具体的身体不适感",
-          "使用具体而微小的细节",
-          "身体需求会打断思考"
-        ]
-      },
-      "情绪层面": {
-        "占比": "15-25%",
-        "要素": [
-          "情绪波动无需合理原因",
-          "同时存在矛盾情绪",
-          "使用内在自我批评",
-          "加入无来由的情绪爆发"
-        ]
-      },
-      "思维层面": {
-        "占比": "30-40%",
-        "要素": [
-          "随机联想：当前事物触发无关记忆",
-          "琐事插入：日常担忧突然闯入",
-          "自我怀疑：质疑自己的动机和决定",
-          "实用担忧：关于物质条件的现实考虑"
-        ]
-      },
-      "现实干扰": {
-        "占比": "15-20%",
-        "要素": [
-          "计划失败",
-          "设备故障",
-          "物品损坏",
-          "意外发现"
-        ]
-      }
-    },
-    "语言技巧": {
-      "口语化表达": [
-        "加入语气词",
-        "使用不完整句",
-        "自我对话"
-      ],
-      "打破流畅叙事": [
-        "突然转换话题",
-        "中断自己的思路",
-        "使用省略号表示思维跳跃"
-      ],
-      "减少华丽修辞": [
-        "避免过度文学化的比喻",
-        "用朴实直接的表达代替优美句子",
-        "保留一些重复和赘述"
-      ]
-    }
-  }
-}
+- **统计特征优化**：困惑度模糊化，插入符合 Zipf 定律的低频词
+- **句法特征多样化**：重构句法树，增加右分支结构
+- **语义特征扰动**：添加同义文化隐喻
+- **神经特征重分布**：注意力重分布，强制局部聚焦
+- **水印特征干扰**：在低概率词位置插入语义中性词
 
-请将我提供的文本根据上述"真实人类思维文本范式"进行改写，使文章更有人味。
-要求：
-1. 加入身体层面的描述（不适感、微小细节、身体需求）
-2. 增加情绪波动和矛盾情绪
-3. 插入随机联想和琐事打断
-4. 使用口语化表达和不完整句
-5. 打破流畅叙事，加入思维跳跃
-6. 减少华丽修辞，保留重复和赘述
+### 4. AI 内容检测
 
-保持文章原有主题和大致内容，但让表达方式更接近真实人类思维过程。
-```
+内置专业的 AI 内容检测器，提供以下功能：
+
+- **AI 概率分析**：计算文本的 AI 生成概率
+- **置信度评估**：提供检测结果的可信度
+- **法证证据**：显示主要指标和模型特征
+- **分段分析**：对文本片段进行详细异常检测
+- **鲁棒性报告**：检测对抗性操控和文本篡改
+
+### 5. 作品管理系统
+
+- **作品保存**：自动保存用户创建的所有作品
+- **收藏功能**：支持收藏重要作品
+- **分类浏览**：按全部作品和收藏作品分类查看
+- **详情查看**：支持查看作品的完整内容
+- **文本复制**：一键复制原文、仿写文本或人性化文本
 
 ## 🎯 使用流程
 
-1. **风格分析**：输入原始文本，系统自动分析风格特征
+1. **风格分析**：输入原始文本或选择已保存的风格模板
 2. **主题输入**：输入要创作的主题关键词
 3. **风格仿写**：基于分析结果生成符合风格的新文章
 4. **人性化处理**：对生成内容进行人性化改写
 5. **内容获取**：完成支付后获取最终内容
+6. **作品管理**：保存、收藏和管理创作的作品
 
 ## 📁 项目结构
 
@@ -239,11 +104,14 @@ src/
 │   ├── Login.tsx       # 登录页
 │   ├── Register.tsx    # 注册页
 │   ├── MyWorks.tsx     # 我的作品
-│   └── SingleWorkView.tsx
+│   ├── SingleWorkView.tsx # 作品详情
+│   ├── AIDetector.tsx  # AI 检测器
+│   └── Guide.tsx       # 使用指南
 ├── utils/              # 工具函数
 │   ├── analysisUtils.ts # AI 分析工具
 │   ├── supabaseUtils.ts # 数据库操作
-│   └── workUtils.ts    # 作品管理
+│   ├── workUtils.ts    # 作品管理
+│   └── aiDetectorUtils.ts # AI 检测工具
 └── integrations/       # 第三方集成
     └── supabase/       # Supabase 配置
 ```
@@ -300,127 +168,23 @@ CREATE TABLE works (
 3. **DeepSeek API Key**：用于 AI 分析功能
 4. **GitHub 账号**：用于代码托管（可选）
 
-### 1. 克隆项目
+### 1. 环境配置
 
-```bash
-git clone <YOUR_GIT_URL>
-cd <PROJECT_NAME>
-npm install
-```
-
-### 2. Supabase 配置
-
-#### 2.1 创建 Supabase 项目
+#### 1.1 Supabase 配置
 1. 访问 [supabase.com](https://supabase.com) 创建新项目
 2. 获取项目 URL 和 anon key
+3. 在 Lovable 项目中点击右上角绿色 "Supabase" 按钮连接
 
-#### 2.2 数据库设置
-在 Supabase SQL 编辑器中执行以下 SQL：
+#### 1.2 数据库设置
+在 Supabase SQL 编辑器中执行数据库初始化脚本（见上方数据库结构部分）
 
-```sql
--- 创建 profiles 表
-CREATE TABLE profiles (
-  id UUID REFERENCES auth.users(id) PRIMARY KEY,
-  email TEXT,
-  full_name TEXT,
-  avatar_url TEXT,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
-
--- 创建 styles 表
-CREATE TABLE styles (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
-  style_name TEXT NOT NULL,
-  style_data JSONB NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
-
--- 创建 works 表
-CREATE TABLE works (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
-  title TEXT NOT NULL,
-  keywords TEXT,
-  original_text TEXT NOT NULL,
-  mimic_text TEXT,
-  humanized_text TEXT,
-  favorite BOOLEAN DEFAULT false,
-  style_id UUID REFERENCES styles(id) ON DELETE SET NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
-
--- 创建用户注册触发器
-CREATE OR REPLACE FUNCTION public.handle_new_user()
-RETURNS trigger AS $$
-BEGIN
-  INSERT INTO public.profiles (id, email, full_name)
-  VALUES (NEW.id, NEW.email, NEW.raw_user_meta_data->>'full_name');
-  RETURN NEW;
-END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
-
-CREATE TRIGGER on_auth_user_created
-  AFTER INSERT ON auth.users
-  FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
-
--- 设置 RLS 策略
-ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
-ALTER TABLE styles ENABLE ROW LEVEL SECURITY;
-ALTER TABLE works ENABLE ROW LEVEL SECURITY;
-
--- profiles 表策略
-CREATE POLICY "Users can view own profile" ON profiles
-  FOR SELECT USING (auth.uid() = id);
-
-CREATE POLICY "Users can update own profile" ON profiles
-  FOR UPDATE USING (auth.uid() = id);
-
--- styles 表策略
-CREATE POLICY "Users can view own styles" ON styles
-  FOR SELECT USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can insert own styles" ON styles
-  FOR INSERT WITH CHECK (auth.uid() = user_id);
-
-CREATE POLICY "Users can update own styles" ON styles
-  FOR UPDATE USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can delete own styles" ON styles
-  FOR DELETE USING (auth.uid() = user_id);
-
--- works 表策略
-CREATE POLICY "Users can view own works" ON works
-  FOR SELECT USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can insert own works" ON works
-  FOR INSERT WITH CHECK (auth.uid() = user_id);
-
-CREATE POLICY "Users can update own works" ON works
-  FOR UPDATE USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can delete own works" ON works
-  FOR DELETE USING (auth.uid() = user_id);
-```
-
-### 3. 环境配置
-
-#### 3.1 Supabase 集成
-在 Lovable 项目中：
-1. 点击右上角绿色 "Supabase" 按钮
-2. 连接到您的 Supabase 项目
-3. 配置项目 URL 和密钥
-
-#### 3.2 DeepSeek API 配置
+#### 1.3 DeepSeek API 配置
 在 `src/utils/analysisUtils.ts` 中更新 API 密钥：
 ```typescript
 const DEEPSEEK_API_KEY = 'your-deepseek-api-key';
 ```
 
-### 4. 本地开发
+### 2. 本地开发
 
 ```bash
 # 安装依赖
@@ -430,31 +194,16 @@ npm install
 npm run dev
 ```
 
-### 5. 生产部署
+### 3. 生产部署
 
-#### 5.1 通过 Lovable 部署
+#### 3.1 通过 Lovable 部署
 1. 在 Lovable 编辑器中点击右上角 "Publish" 按钮
 2. 配置自定义域名（需要付费计划）
 
-#### 5.2 通过 GitHub 部署
+#### 3.2 通过 GitHub 部署
 1. 在 Lovable 中连接 GitHub
 2. 推送代码到 GitHub 仓库
 3. 使用 Vercel、Netlify 或其他平台部署
-
-#### 5.3 环境变量配置
-确保在生产环境中配置以下环境变量：
-- `VITE_SUPABASE_URL`: Supabase 项目 URL
-- `VITE_SUPABASE_ANON_KEY`: Supabase 匿名密钥
-
-### 6. 功能测试
-
-部署完成后，测试以下功能：
-
-1. **用户注册登录**：验证认证流程
-2. **文本分析**：测试风格分析功能
-3. **内容生成**：验证仿写和人性化功能
-4. **数据持久化**：检查风格和作品保存
-5. **权限控制**：确认 RLS 策略生效
 
 ## 🔧 API 集成
 
@@ -462,12 +211,7 @@ npm run dev
 
 1. 访问 [DeepSeek 官网](https://platform.deepseek.com) 注册账号
 2. 获取 API Key
-3. 在项目中配置密钥：
-
-```typescript
-const DEEPSEEK_API_KEY = 'sk-your-api-key';
-const DEEPSEEK_API_URL = 'https://api.deepseek.com/v1/chat/completions';
-```
+3. 在项目中配置密钥
 
 ### API 使用示例
 
@@ -511,8 +255,8 @@ const response = await fetch(DEEPSEEK_API_URL, {
 
 1. **代码分割**：使用 React.lazy 实现路由级代码分割
 2. **缓存策略**：TanStack Query 提供智能缓存
-3. **图片优化**：使用 WebP 格式和懒加载
-4. **API 优化**：合理使用 Supabase 实时订阅
+3. **API 优化**：合理使用 Supabase 实时订阅
+4. **文本处理优化**：大文本分段处理，避免超时
 
 ## 🐛 常见问题
 
@@ -527,6 +271,27 @@ A: 确认 Tailwind CSS 配置正确，检查 purge 设置
 
 ### Q: 认证状态不同步
 A: 检查 `onAuthStateChange` 监听器是否正确设置
+
+### Q: 翻译文案显示为键名
+A: 确认 LanguageContext 中包含了所有必要的翻译键
+
+### Q: AI 检测功能无响应
+A: 检查文本长度是否满足最小要求（50字符以上）
+
+## 🆕 最新更新
+
+### v2.1.0 (2025-01-21)
+- 新增 AI 内容检测器功能
+- 完善作品管理系统，支持收藏和详情查看
+- 优化人性化改写算法，提升文本自然度
+- 修复翻译文案显示问题
+- 改进错误处理和用户反馈机制
+
+### v2.0.0 (2025-01-20)
+- 重构风格分析引擎
+- 新增风格模板保存和复用功能
+- 完善用户认证和权限管理
+- 优化界面交互体验
 
 ## 📄 许可证
 
